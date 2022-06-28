@@ -57,15 +57,37 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast( array ) {
-
+  console.log('in getLast');
+  if ( array.length > 0){
+    return array[array.length-1];
+  } // end full arrays
+  else{
+    return 'undefined';
+  } // end empty arrays
 }
+
+let colors = [];
+console.log(getLast(colors));
+let pets = ['Dan', 'Chloe', 'Clementine', 'Phoebe'];
+console.log('Last pet listed:', getLast(pets));
+
+
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
-function find( value, array ){
-  
+function find( value, newArray ){
+  let check = false;
+  for(let i=0; i<newArray.length; i++){
+   if(value == newArray[i]){
+    check = true;
+  }
 }
+  return check;
+}
+
+console.log('Do we have a pet named Chloe?', find('Chloe', pets));
+console.log('Do we have a pet named Fred?', find('Max', pets));
 
 // ----------------------
 // Stretch Goals
